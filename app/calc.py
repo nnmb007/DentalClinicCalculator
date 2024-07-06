@@ -1,8 +1,18 @@
-# Import command
 import streamlit as st
 
+
 class ProductivityCalculator:
-    def __init__(self, cases_per_day, avg_production_per_case, avg_time_per_case, tat_between_cases, total_fees_anesthesia, anesthesia_provider, dental_provider, assistants):
+    def __init__(
+        self,
+        cases_per_day,
+        avg_production_per_case,
+        avg_time_per_case,
+        tat_between_cases,
+        total_fees_anesthesia,
+        anesthesia_provider,
+        dental_provider,
+        assistants,
+    ):
         self.cases_per_day = cases_per_day
         self.avg_production_per_case = avg_production_per_case
         self.avg_time_per_case = avg_time_per_case
@@ -31,15 +41,24 @@ class ProductivityCalculator:
         st.write(f"Profitability: ${self.profitability()}")
 
 
-cases_per_day = 7
+cases_per_day = st.number_input("Enter cases per day")
 avg_production_per_case = st.number_input("Enter Average production per case")
-avg_time_per_case  = st.number_input("Enter Avg time per case")
+avg_time_per_case = st.number_input("Enter Avg time per case")
 tat_between_cases = st.number_input("Turnaround time between cases")
-total_fees_anesthesia =  st.number_input("Enter Total Fees charged for anesthesia")
+total_fees_anesthesia = st.number_input("Enter Total Fees charged for anesthesia")
 anesthesia_provider = st.text_input("Enter Anesthesia Provider", "")
 dental_provider = st.text_input("Enter dental provider", "")
 assistants = st.text_input("Enter the assistants")
 
-if(st.button("Calculate Profitability")):
-    calculator = ProductivityCalculator(cases_per_day, avg_production_per_case, avg_time_per_case, tat_between_cases, total_fees_anesthesia, anesthesia_provider, dental_provider, assistants)
+if st.button("Calculate Profitability"):
+    calculator = ProductivityCalculator(
+        cases_per_day,
+        avg_production_per_case,
+        avg_time_per_case,
+        tat_between_cases,
+        total_fees_anesthesia,
+        anesthesia_provider,
+        dental_provider,
+        assistants,
+    )
     calculator.print_report()
