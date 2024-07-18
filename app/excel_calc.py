@@ -3,7 +3,7 @@ import streamlit as st
 
 
 st.header("Efficiency calculator for optimization")
-st.subheader("NOTE: This will not work unless it's a CSV file")
+
 
 
 uploaded_file = st.file_uploader(
