@@ -5,7 +5,7 @@ import streamlit as st
 st.header("Efficiency calculator for optimization")
 st.subheader("NOTE: This will not work unless it's a CSV file")
 
-# uploaded_file = st.file_uploader("Upload your CSV, XLS, or XLXS file", type=["xlxs", "xls"], key="uploaded_file")
+
 uploaded_file = st.file_uploader(
     "Upload your CSV, XLS, or XLXS file", type=["csv", "xlsx"], accept_multiple_files=False, key="uploaded_file"
 )
