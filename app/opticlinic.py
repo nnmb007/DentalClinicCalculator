@@ -54,7 +54,7 @@ with ExcelCalculator:
             st.write(f"Total Fees for Anesthesia: ${self.total_fees_anesthesia}")
             st.write(f"Total Daily Time: {self.total_daily_time()} minutes")
             st.write(f"Total Daily Production: ${self.total_daily_production()}")
-            st.write(f"Profitability: ${round(self.profitability(), 2)}")
+            st.write(f"Profitability: ${round(self.profitability(), 2)} per hour")
             st.write(f"Total Overtime in minutes: {self.total_overtime_minutes} minutes")
             
     if uploaded_file is not None:
@@ -123,13 +123,14 @@ with BasicCalculator:
 
         def profitability(self):
             total_daily_production = self.total_daily_production()
-            return total_daily_production - self.total_fees_anesthesia
+            return total_daily_production - self.total_fees_anesthesia / ((self.cases_per_day * self.avg_time_per_case) + (self.cases_per_day - 1 * self.tat_between_cases))
+
 
         def print_report(self):
             st.write(f"Total Daily Time: {self.total_daily_time()} minutes")
             st.write(f"Total Daily Production: ${self.total_daily_production()}")
             st.write(f"Total Fees for Anesthesia: ${self.total_fees_anesthesia}")
-            st.write(f"Profitability: ${round(self.profitability(), 2)}")
+            st.write(f"Profitability: ${round(self.profitability(), 2)} per hour")
     cases_per_day = st.number_input("Enter cases per day")
     avg_production_per_case = st.number_input("Enter Average production per case ($)")
     avg_time_per_case = st.number_input("Enter Avg time per case (minutes)")
