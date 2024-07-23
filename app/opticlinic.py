@@ -4,6 +4,11 @@ import pandas as pd
 
 st.header("Welcome to OptiClinic")
 st.text("Please choose your desired calculator")
+url = "https://docs.google.com/document/d/1QYCh_ro920zFCjdyPP-N9XR0l_IdOMQawnz_P2HfI60/edit?usp=sharing"
+st.write("Check out this [guide](%s)" % url)
+st.write("Try out this Test CSV file for the Excel Calculator!")
+with open('opticlinic_csv.csv', 'rb') as f:
+   st.download_button('Download Test CSV', f, file_name='testfile.csv')
 ExcelCalculator, BasicCalculator = st.tabs(["ExcelCalculator", "BasicCalculator"])
 with ExcelCalculator:  
     st.header("Efficiency calculator for optimization")

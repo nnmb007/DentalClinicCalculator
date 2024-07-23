@@ -1,0 +1,9 @@
+dental_provider,anesthesia_provider,time_spent,anesthesia_fee,number_of_assistant,cases_per_day,tat_between_cases,production_per_case
+Dr X,,20,,0,7,10,200
+Dr Y,Dr Z,20,300,1,7,8,500
+Dr X,,20,,2,7,15,200
+Dr X,,20,,1,7,20,200
+Dr Y,,20,,1,7,12,200
+Dr X,,17,,1,7,16,200
+,,,,,,,
+,,,,,,,
