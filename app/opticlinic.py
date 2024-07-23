@@ -1,12 +1,18 @@
 import streamlit as st
 import pandas as pd
-
+import os
 
 st.header("Welcome to noah")
 st.text("Please choose your desired calculator")
 url = "https://docs.google.com/document/d/1QYCh_ro920zFCjdyPP-N9XR0l_IdOMQawnz_P2HfI60/edit?usp=sharing"
 st.write("Check out this [guide](%s)" % url)
 st.write("Try out this Test CSV file for the Excel Calculator!")
+filelist=[]
+for root, dirs, files in os.walk("."):
+      for file in files:
+             filename=os.path.join(root, file)
+             filelist.append(filename)
+st.write(filelist)
 with open('opticlinic_csv.csv', 'rb') as f:
    st.download_button('Download Test CSV', f, file_name='testfile.csv')
 ExcelCalculator, BasicCalculator = st.tabs(["ExcelCalculator", "BasicCalculator"])
