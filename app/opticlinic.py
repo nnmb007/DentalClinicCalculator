@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 
-st.header("Welcome to OptiClinic")
+st.header("Welcome to noah")
 st.text("Please choose your desired calculator")
 url = "https://docs.google.com/document/d/1QYCh_ro920zFCjdyPP-N9XR0l_IdOMQawnz_P2HfI60/edit?usp=sharing"
 st.write("Check out this [guide](%s)" % url)
