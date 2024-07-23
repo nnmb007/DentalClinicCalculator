@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
-from io import StringIO
 
-st.header("Welcome to noah")
+st.header("Welcome to OptiClinic")
 st.text("Please choose your desired calculator")
 url = "https://docs.google.com/document/d/1QYCh_ro920zFCjdyPP-N9XR0l_IdOMQawnz_P2HfI60/edit?usp=sharing"
 st.write("Check out this [guide](%s)" % url)
@@ -71,7 +70,7 @@ with ExcelCalculator:
             st.write(f"Total Daily Production: ${self.total_daily_production()}")
             st.write(f"Profitability: ${round(self.profitability(), 2)} per hour")
             st.write(f"Total Overtime in minutes: {self.total_overtime_minutes} minutes")
-            
+    
     if uploaded_file is not None:
         uploaded_file_name = str(uploaded_file.name)
         if uploaded_file_name.find(".csv") > 0:
@@ -104,6 +103,7 @@ with ExcelCalculator:
                 calculator.print_report()
         else:
             st.header("WRONG TYPE UPLOADED: DO .csv, .xls, or .xlsx")
+
 with BasicCalculator:
     st.header("Welcome to the basic calculator")
 
