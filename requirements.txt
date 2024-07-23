@@ -3,4 +3,4 @@ altair
 pandas
 streamlit
 openpyxl
-os
+io
