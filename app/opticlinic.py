@@ -13,8 +13,8 @@ for root, dirs, files in os.walk("."):
              filename=os.path.join(root, file)
              filelist.append(filename)
 st.write(filelist)
-with open('opticlinic_csv.csv', 'rb') as f:
-   st.download_button('Download Test CSV', f, file_name='testfile.csv')
+# with open('opticlinic_csv.csv', 'rb') as f:
+#    st.download_button('Download Test CSV', f, file_name='testfile.csv')
 ExcelCalculator, BasicCalculator = st.tabs(["ExcelCalculator", "BasicCalculator"])
 with ExcelCalculator:  
     st.header("Efficiency calculator for optimization")
